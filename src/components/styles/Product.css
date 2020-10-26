@@ -1,0 +1,47 @@
+.card-product {
+  margin: 6px;
+  border: 1px solid #909090;
+  border-radius: 4px;
+}
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+.image-product {
+  border-radius: 10px 10px 0px 0px;
+  max-width: 100%;
+}
+
+.product-btn {
+  padding: 4px;
+}
+
+.hola {
+  margin: 4px;
+}
+
+.info-price {
+  display: flex;
+  justify-content: space-between;
+  padding: 0px 13px 0px 8px;
+  font-size: 15px;
+  padding-bottom: 6px;
+}
+
+.prince-product {
+  color: #673ab7;
+  font-weight: 800;
+}
+.btn__comprar {
+  background: #673ab7de;
+}
+
+.color-talla {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 7px;
+}
+
+.colores-product {
+  display: flex;
+}

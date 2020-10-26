@@ -1,0 +1,99 @@
+.content__product {
+  padding: 14px;
+
+  margin-top: 10px;
+  display: flex;
+  border: 1px solid gainsboro;
+  border-radius: 5px;
+}
+
+.img_title {
+  display: flex;
+  /* flex-direction: column; */
+  overflow-anchor: auto;
+  /* display: grid; */
+}
+
+.img_content {
+  max-width: 150px;
+  width: 135px;
+  height: auto;
+
+  display: block;
+  margin-right: 14px;
+}
+
+.imgname {
+  max-width: 100%;
+}
+
+.title_name_product {
+  font-size: 16px;
+  text-transform: uppercase;
+}
+
+.title_name {
+  width: 600px;
+
+  align-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.quanty__price {
+  width: 100%;
+
+  margin: auto;
+  padding: 0;
+}
+
+.quanty_card {
+  display: flex;
+  justify-content: space-between;
+  color: #757575;
+  padding: 19px 0px;
+}
+.price_unidad {
+  display: flex;
+  justify-content: space-between;
+  color: #757575;
+  padding: 5px 0px;
+}
+.price_total {
+  display: flex;
+  justify-content: space-between;
+  color: #757575;
+  font-weight: 800;
+}
+
+.price_total_finally {
+  color: #673ab7;
+  font-weight: 800;
+}
+
+.btn__delete {
+  padding: 5px 17px;
+  display: flex;
+  align-items: center;
+}
+
+.btn__delete-content {
+  cursor: pointer;
+  border-radius: 50%;
+  padding: 4px 7px;
+}
+.btn__delete-content:hover {
+  background: #e9e9e9;
+}
+.btn__delete-content:hover .btn-svg {
+  color: #673ab7;
+}
+
+.btn-svg {
+  width: 100%;
+  color: #89898c;
+}
+
+.btn-svg:hover {
+  color: #673ab7;
+}

@@ -1,0 +1,27 @@
+
+.content-category{
+  padding: 0 33px;
+}
+
+.listacategoria {
+  border: 1px solid #c1c1c1;
+  border-radius: 5px;
+  padding: 3px;
+  background-color: #f3f3f3;
+  margin-bottom: 8px;
+  padding: 6px;
+}
+
+.icon-link{
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  padding-left: 10%;
+}
+.icon-link img{
+  width: 31px;
+  margin-right: 7px;
+}
+.icon-link p{
+  display: inline-block;
+}

@@ -1,0 +1,14 @@
+.detail_content{
+  width: 1140px;
+  max-width:  1140px;
+  margin: 0 auto;
+}
+
+.col-5{
+  padding: 0 15px;
+}
+
+.summary {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}

@@ -1,0 +1,16 @@
+.box-progress{
+  display: flex;
+  justify-content: space-between;
+}
+
+.box-progress{
+  width: 100%;
+  margin: 0 auto;
+}
+
+@media only screen and (max-width: 570px) {
+
+.progress-app{
+  padding: 0 15px;
+}
+}
