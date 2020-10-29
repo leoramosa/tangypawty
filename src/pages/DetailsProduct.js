@@ -15,7 +15,6 @@ import InputLabel from '@material-ui/core/InputLabel';
 
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
-import FormHelperText from '@material-ui/core/FormHelperText';
 import NativeSelect from '@material-ui/core/NativeSelect';
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -61,7 +60,7 @@ function DetailsProduct(props) {
 
   const handleChange2 = (event) => {
     setColor(event.target.value);
-   
+    
   };
 
   let { cart, setCart } = useContext(AppContext);
@@ -130,11 +129,11 @@ function DetailsProduct(props) {
     setFotoActual(ruta);
   }
 
-  function obtenerThumbs(colorr) {
+  const obtenerThumbs = (colores) => {
     imagenes.forEach((item) => {
-      if (item.color === colorr) {
+      if (item.color === colores.target.value) {
         setThumbs(item.imagenes);
-        setFotoActual(item.imagenes[0]);
+        setFotoActual(item.imagenes[0]);;
       }
     });
   }
@@ -208,7 +207,7 @@ function DetailsProduct(props) {
         </div>
         <div>
           <Grid container>
-            <Grid item xs={12} md={7}   lg={7}>
+            <Grid className="grid_image" item xs={12} md={7}  sm={7} lg={7}>
               <Paper className={classes.paper}>
                 <div className="" id="content-wrapper">
                   <div id="slide-wrapper">
@@ -239,7 +238,7 @@ function DetailsProduct(props) {
               </Paper>
             </Grid>
 
-            <Grid item xs={12} sm={5} md={5} lg={5} >
+            <Grid className="grid_image" item xs={12} sm={5} md={5} lg={5} >
               <div className="modal-detail">
                 <p className="title_product">{detalle.nombre}</p>
                 <div className="">
@@ -272,13 +271,13 @@ function DetailsProduct(props) {
                         id="demo-simple-select-outlined"
                         value={color}
                         onChange={handleChange2}
+                        onClick={obtenerThumbs}
                         label="Color"
                       >
-                        {detalle.idcolor.map((item, i) => (
+                        {detalle.idcolor.map((item) => (
                           <MenuItem
                             key={item.id}
                             value={item.valuecolor}
-                            onClick={obtenerThumbs.bind(this, item.valuecolor)}
                           >
                             {item.valuecolor}
                           </MenuItem>
@@ -317,25 +316,23 @@ function DetailsProduct(props) {
                       value={color}
                       name="color"
                       onChange={handleChange2}
+                      onClick={obtenerThumbs}
                       inputProps={{ 'aria-label': 'color' }}
                     >
                       <option value="" disabled>
-                        Placeholder
+                        Seleccione colores
                       </option>
-                      
-                      
-                      {detalle.idcolor.map((item, i) => (
+                      {detalle.idcolor.map((item) => (
                           <option
                             key={item.id}
                             value={item.valuecolor}
-                            onClick={obtenerThumbs.bind(this, item.valuecolor)}
                           >
                             {item.valuecolor}
                           </option>
                         ))}
                       
                     </NativeSelect>
-                    <FormHelperText>Placeholder</FormHelperText>
+                   
                 </FormControl>
                 </div>
                 <div className="separador"></div>

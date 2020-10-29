@@ -6,7 +6,7 @@ import HomeProducts from '../pages/HomeProducts';
 import HomeCategorias from '../pages/HomeCategorias';
 
 
-import select from '../components/copy';
+import select from '../components/copy2';
 import pago from '../components/PaymentForm';
 import NotFound from '../pages/NotFound';
 import { AppProvider } from '../context/AppContext';
