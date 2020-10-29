@@ -49,3 +49,11 @@
   flex-wrap: wrap;
   align-content: center;
 }
+
+
+@media screen and (max-width: 544px) {
+  .column-footer {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
