@@ -23,7 +23,7 @@ function App() {
         <Layout>
           <Switch>
             <Route exact path="/" component={PetHome} />
-            <Route path="/select" component={select} />
+            <Route exact path="/select" component={select} />
             <Route path="/cart" component={Cart} />
             <Route exact path="/products/" component={HomeProducts} />
             <Route exact path="/productos/:id/" component={DetailsProduct} />

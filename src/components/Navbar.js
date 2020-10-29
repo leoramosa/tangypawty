@@ -93,7 +93,7 @@ function Navbar() {
             </li>
             <li>
               <Link
-                to="/Contact"
+                 to="/select"
                 className="nav-links"
                 onClick={() => setClicked((clicked) => !clicked)}
               >
