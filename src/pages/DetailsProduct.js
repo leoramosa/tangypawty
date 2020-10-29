@@ -15,7 +15,8 @@ import InputLabel from '@material-ui/core/InputLabel';
 
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
-
+import FormHelperText from '@material-ui/core/FormHelperText';
+import NativeSelect from '@material-ui/core/NativeSelect';
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
@@ -310,21 +311,32 @@ function DetailsProduct(props) {
               <div className="selectarea">
                 <div className="select_content">
                   <label className="selectLabel" htmlFor="">Colores</label>
-                  <select className="select_delivery" value={color}
-                        onChange={handleChange2} label="Color" >
-                      <option value="" >
+                  <FormControl className={classes.formControl}>
+                    <NativeSelect
+                      className={classes.selectEmpty}
+                      value={color}
+                      name="color"
+                      onChange={handleChange2}
+                      inputProps={{ 'aria-label': 'color' }}
+                    >
+                      <option value="" disabled>
                         Placeholder
                       </option>
+                      
+                      
                       {detalle.idcolor.map((item, i) => (
                           <option
                             key={item.id}
                             value={item.valuecolor}
-                            
+                            onClick={obtenerThumbs.bind(this, item.valuecolor)}
                           >
                             {item.valuecolor}
-                            </option>
-                            ))}
-                  </select>
+                          </option>
+                        ))}
+                      
+                    </NativeSelect>
+                    <FormHelperText>Placeholder</FormHelperText>
+                </FormControl>
                 </div>
                 <div className="separador"></div>
                 <div className="select_content">
