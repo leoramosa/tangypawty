@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useContext } from 'react';
 import axios from 'axios';
-import InputNumber from '../components/InputNumber';
 import './styles/Details.css';
 import './styles/DetailsProduct.css';
 import { Link } from 'react-router-dom';
@@ -38,24 +37,36 @@ const useStyles = makeStyles((theme) => ({
   },
   buttonCard: {
     background:"#6c5ce7",
+    borderRadius:"0px 5px 5px 0px",
+    [theme.breakpoints.down('sm')]: {
+      borderRadius:"0px 0px 0px 0px",
+    },
   },
 }));
 
+
+
 function DetailsProduct(props) {
+
+
+  const [cantidad, setCantidad] = useState(1);
   const classes = useStyles();
-  const [talla, setTalla] = React.useState();
+  const [talla, setTalla] = useState('');
 
   const handleChange = (event) => {
     setTalla(event.target.value);
   };
-  const [color, setColor] = React.useState();
+  const [color, setColor] = useState('');
 
   const handleChange2 = (event) => {
     setColor(event.target.value);
+   
   };
 
   let { cart, setCart } = useContext(AppContext);
-  const [cantidad, setCantidad] = useState(1);
+  
+
+  
 
   let [detalle, setDetalle] = useState({
     idcolor: [],
@@ -118,9 +129,9 @@ function DetailsProduct(props) {
     setFotoActual(ruta);
   }
 
-  function obtenerThumbs(color) {
+  function obtenerThumbs(colorr) {
     imagenes.forEach((item) => {
-      if (item.color === color) {
+      if (item.color === colorr) {
         setThumbs(item.imagenes);
         setFotoActual(item.imagenes[0]);
       }
@@ -188,6 +199,7 @@ function DetailsProduct(props) {
 
   return (
     <div className="detail_content">
+      
       <div className={classes.root}>
         <div className="col-lg-12 summary">
           <Link className="linkapp" to="/">Home</Link> / <Link className="linkapp" to="">Categoría</Link> /
@@ -195,7 +207,7 @@ function DetailsProduct(props) {
         </div>
         <div>
           <Grid container>
-            <Grid item xs={12} md={12} lg={7}>
+            <Grid item xs={12} md={7}   lg={7}>
               <Paper className={classes.paper}>
                 <div className="" id="content-wrapper">
                   <div id="slide-wrapper">
@@ -226,7 +238,7 @@ function DetailsProduct(props) {
               </Paper>
             </Grid>
 
-            <Grid item xs={5} className="col-5">
+            <Grid item xs={12} sm={5} md={5} lg={5} >
               <div className="modal-detail">
                 <p className="title_product">{detalle.nombre}</p>
                 <div className="">
@@ -253,9 +265,9 @@ function DetailsProduct(props) {
                   <div className="color-talla-defa">
                     
                   <FormControl variant="outlined" className={classes.formControl}>
-                      <InputLabel id="demo-simple-select-outlined-label">Color</InputLabel>
+                      <InputLabel id="demo-simple-select-outlined-label-1">Color</InputLabel>
                       <Select
-                        labelId="demo-simple-select-outlined-label"
+                        labelId="demo-simple-select-outlined-label-1"
                         id="demo-simple-select-outlined"
                         value={color}
                         onChange={handleChange2}
@@ -276,14 +288,14 @@ function DetailsProduct(props) {
                   <div className="color-talla-defa">
                     
                     <FormControl variant="outlined" className={classes.formControl}>
-                      <InputLabel id="demo-simple-select-outlined-label">Talla</InputLabel>
+                      <InputLabel id="demo-simple-select-outlined-label-2">Talla</InputLabel>
                       <Select
-                        labelId="demo-simple-select-outlined-label"
-                        id="demo-simple-select-outlined"
+                        labelId="demo-simple-select-outlined-label-2"
+                        id="demo-simple-select-outlined-2"
                         label="Talla"
                         value={talla}
                         onChange={handleChange}
-                       
+                        
                       >
                         {detalle.idtallaproducto.map((talla) => (
                           <MenuItem key={talla.id} value={talla.nomtalla}>
@@ -295,21 +307,53 @@ function DetailsProduct(props) {
                   </div>
                 </div>
               </div>
+              <div className="selectarea">
+                <div className="select_content">
+                  <label className="selectLabel" htmlFor="">Colores</label>
+                  <select className="select_delivery" value={color}
+                        onChange={handleChange2} label="Color" >
+                      <option value="" >
+                        Placeholder
+                      </option>
+                      {detalle.idcolor.map((item, i) => (
+                          <option
+                            key={item.id}
+                            value={item.valuecolor}
+                            
+                          >
+                            {item.valuecolor}
+                            </option>
+                            ))}
+                  </select>
+                </div>
+                <div className="separador"></div>
+                <div className="select_content">
+                  <label className="selectLabel" htmlFor="">Talla</label>
+                  <select className="select_delivery" name="" id="">
+                      <option value="" disabled>Seleccione Talla</option>
+                      <option value="">2</option>
+                      <option value="">3</option>
+                  </select>
+                </div>
+              </div>
+              
 
               <div className="btn_compra_quanty">
-                <InputNumber
-                  className="cantidad"
-                  onChange={updateCantidad.bind(this)}
-                  min="1"
-                />
+                
                 <div className="btn-add">
+                  <div className="buttonCantidad">
+                    <button className="in-btn" onClick={() => setCantidad(cantidad - 1 || 1)} >-</button>
+                        <div type="number" className="campInputbtn" onChange={updateCantidad.bind(this)} defaultValue="1" min="1" max="10">{cantidad}</div>
+                    <button className="des-btn" onClick={() => setCantidad(cantidad + 1)} >+</button>
+                  </div>
+
                   <Button
                     variant="contained"
                     color="primary"
                     onClick={agregarProducto.bind(this)}
                     className={classes.buttonCard}
                   >
-                    agregar a bolsa
+                    agregar al carrito
                   </Button>
                   <ModalAddProduct
                     CloseModal={CloseModal}
@@ -321,6 +365,7 @@ function DetailsProduct(props) {
           </Grid>
         </div>
       </div>
+     
     </div>
   );
 }

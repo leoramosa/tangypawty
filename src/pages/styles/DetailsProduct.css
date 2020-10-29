@@ -12,3 +12,106 @@
   padding-top: 15px;
   padding-bottom: 15px;
 }
+
+.buttonCantidad{
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  align-items: center;
+  border: 1px solid #cccccc;
+  height: 48px;
+  border-radius: 5px 0px 0px 5px;
+}
+
+.campInputbtn{
+  width: 40%;
+  text-align: center;
+}
+
+.in-btn, .des-btn{
+  height: 100%;
+    width: 30%;
+    border: none;
+    background: transparent;
+    font-size: 21px;
+    color: #6d6d6d;
+}
+
+.in-btn:focus{
+  outline: none;
+}
+.des-btn:focus{
+  outline: none;
+}
+
+
+/* style select delivery */
+.select_delivery{
+  width: 100%;
+  height: 44px;
+  border: transparent;
+  border-radius: 5px;
+  background-color: transparent;
+  padding: 5px 30px 5px 10px;
+  font-size: 14px;
+  color: #6a6a6a;
+}
+
+.select_delivery:focus{
+  outline: none;
+}
+
+.selectLabel{
+  font-size: 12px;
+  color: #6c5ce7;
+  font-weight: 700;
+  margin: 0 0 0 10px;
+}
+
+
+/* style select delivery */
+
+@media screen and (max-width: 1140px) {
+  .detail_content{
+    width: 100%;
+    padding: 0 15px;
+  }
+}
+@media screen and (max-width: 769px) {
+  
+}
+@media screen and (max-width: 544px) {
+  .btn_compra_quanty {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 40;
+    margin-top: 0;
+    width: 100%;
+  }
+  .buttonCantidad{
+    height: 48px;
+    background-color: white;
+  }
+
+  .selectarea {
+    width: 100%;
+    position: fixed;
+    padding: 15px 10px;
+    bottom: 42px;
+    left: 0;
+    background: #f9f9f9;
+    -webkit-box-shadow: 0 4px 20px 0 #4b4a4a;
+    box-shadow: 0 4px 20px 0 #4b4a4a;
+    z-index: 40;
+    display: flex;
+  }
+  .select_content{
+    width: 50%;
+  }
+  .separador{
+    background-color: #ccc;
+    padding: 0 1px;
+    margin: 0 5px;
+  }
+}

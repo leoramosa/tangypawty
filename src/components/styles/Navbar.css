@@ -173,9 +173,7 @@
     transition: 250ms;
   }
 
-  Button {
-    display: none;
-  }
+
   .title-banner {
     padding-top: 12%;
     font-size: 48px;
