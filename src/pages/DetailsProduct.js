@@ -344,7 +344,7 @@ function DetailsProduct(props) {
                       onChange={handleChange2}
                       onClick={obtenerThumbs} 
                       className="select_delivery"
-                      name="" id="">
+                      id="">
                       <option value="" >Seleccione Talla</option>
                       {detalle.idcolor.map((item) => (
                           <option
