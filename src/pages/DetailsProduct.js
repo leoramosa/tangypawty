@@ -338,10 +338,22 @@ function DetailsProduct(props) {
                 <div className="separador"></div>
                 <div className="select_content">
                   <label className="selectLabel" htmlFor="">Talla</label>
-                  <select className="select_delivery" name="" id="">
-                      <option value="" disabled>Seleccione Talla</option>
-                      <option value="">2</option>
-                      <option value="">3</option>
+                  <select  
+                      value={color}
+                      name="color"
+                      onChange={handleChange2}
+                      onClick={obtenerThumbs} 
+                      className="select_delivery"
+                      name="" id="">
+                      <option value="" >Seleccione Talla</option>
+                      {detalle.idcolor.map((item) => (
+                          <option
+                            key={item.id}
+                            value={item.valuecolor}
+                          >
+                            {item.valuecolor}
+                          </option>
+                        ))}
                   </select>
                 </div>
               </div>
