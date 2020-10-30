@@ -279,7 +279,10 @@ function DetailsProduct(props) {
                         labelId="demo-simple-select-outlined-label-1"
                         id="demo-simple-select-outlined"
                         value={color}
-                        onChange={handleChange2}
+                        onChange={(e) => {
+                          obtenerThumbs(e);
+                          handleChange2(e);
+                        }}
                         label="Color"
                       >
                         {detalle.idcolor.map((item) => (
@@ -347,26 +350,27 @@ function DetailsProduct(props) {
                 </div>
                 <div className="separador"></div>
                 <div className="select_content">
-                  <label className="selectLabel" htmlFor="">Talla</label>
-                  <select  
-                      
-                      onChange={(e) => {
-                        obtenerThumbs(e);
-                        handleChange2(e);
-                      }}
-                      className="select_delivery"
-                      id="">
-                      <option value="" >Seleccione Talla</option>
-                      {detalle.idcolor.map((item) => (
-                          <option
-                            key={item.id}
-                            value={item.valuecolor}
-                          >
-                            {item.valuecolor}
+                  <label className="selectLabel" htmlFor="">Tall</label>
+                  <FormControl className={classes.formControl}>
+                    <NativeSelect
+                      className={classes.selectEmpty}
+                      name="talla"
+                      value={talla}
+                      onChange={handleChange}
+                      inputProps={{ 'aria-label': 'talla' }}
+                    >
+                      <option value="" disabled>
+                        Seleccione Talla
+                      </option>
+                      {detalle.idtallaproducto.map((talla) => (
+                          <option key={talla.id} value={talla.nomtalla}>
+                            {talla.nomtalla}
                           </option>
                         ))}
-                  </select>
-                  
+                      
+                    </NativeSelect>
+                   
+                </FormControl>
                 </div>
               </div>
               
