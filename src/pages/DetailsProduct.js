@@ -56,12 +56,22 @@ function DetailsProduct(props) {
   const handleChange = (event) => {
     setTalla(event.target.value);
   };
+  
   const [color, setColor] = useState('');
 
   const handleChange2 = (event) => {
     setColor(event.target.value);
-    
   };
+
+  const obtenerThumbs = (colors) => {
+    imagenes.forEach((item) => {
+      if (item.color === colors.target.value) {
+        setThumbs(item.imagenes);
+        setFotoActual(item.imagenes[0]);
+      }
+    });
+  }
+
 
   let { cart, setCart } = useContext(AppContext);
   
@@ -129,14 +139,7 @@ function DetailsProduct(props) {
     setFotoActual(ruta);
   }
 
-  const obtenerThumbs = (colores) => {
-    imagenes.forEach((item) => {
-      if (item.color === colores.target.value) {
-        setThumbs(item.imagenes);
-        setFotoActual(item.imagenes[0]);;
-      }
-    });
-  }
+
 
   let thumbnails = document.getElementsByClassName('thumbnail');
 
@@ -339,10 +342,8 @@ function DetailsProduct(props) {
                 <div className="select_content">
                   <label className="selectLabel" htmlFor="">Talla</label>
                   <select  
-                      value={color}
-                      name="color"
-                      onChange={handleChange2}
-                      onClick={obtenerThumbs} 
+                      onClick={handleChange2}
+                      onChange={obtenerThumbs}
                       className="select_delivery"
                       id="">
                       <option value="" >Seleccione Talla</option>
