@@ -316,10 +316,10 @@ function DetailsProduct(props) {
                   <FormControl className={classes.formControl}>
                     <NativeSelect
                       className={classes.selectEmpty}
-                      value={color}
                       name="color"
-                      onChange={handleChange2}
-                      onClick={obtenerThumbs}
+                      value={color}
+                      onClick={handleChange2}
+                      onChange={obtenerThumbs}
                       inputProps={{ 'aria-label': 'color' }}
                     >
                       <option value="" disabled>
@@ -342,6 +342,7 @@ function DetailsProduct(props) {
                 <div className="select_content">
                   <label className="selectLabel" htmlFor="">Talla</label>
                   <select  
+                    value={color}
                       onClick={handleChange2}
                       onChange={obtenerThumbs}
                       className="select_delivery"
