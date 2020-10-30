@@ -17,10 +17,6 @@ import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
 import NativeSelect from '@material-ui/core/NativeSelect';
 
-import Radio from '@material-ui/core/Radio';
-import RadioGroup from '@material-ui/core/RadioGroup';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
-import FormLabel from '@material-ui/core/FormLabel';
 import { colors } from '@material-ui/core';
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -327,8 +323,10 @@ function DetailsProduct(props) {
                       className={classes.selectEmpty}
                       name="color"
                       value={color}
-                      onClick={handleChange2}
-                      onChange={obtenerThumbs}
+                      onChange={(e) => {
+                        obtenerThumbs(e);
+                        handleChange2(e);
+                      }}
                       inputProps={{ 'aria-label': 'color' }}
                     >
                       <option value="" disabled>
@@ -368,24 +366,7 @@ function DetailsProduct(props) {
                           </option>
                         ))}
                   </select>
-                  <FormControl component="fieldset">
-      <FormLabel component="legend">Gender</FormLabel>
-      <RadioGroup aria-label="gender" name="gender1" value={color} onChange={handleChange2}>
-        
-        {detalle.idcolor.map((item) => (
-                          <FormControlLabel
-                            key={item.id}
-                            value={item.valuecolor}
-                            onClick={obtenerThumbs}
-                            control={<Radio />} label={item.valuecolor}
-                          >
-                            {item.valuecolor}
-                          </FormControlLabel>
-                        ))}
-
-        <FormControlLabel onClick={obtenerThumbs} value="disabled" disabled control={<Radio />} label="(Disabled option)" />
-      </RadioGroup>
-    </FormControl>
+                  
                 </div>
               </div>
               
