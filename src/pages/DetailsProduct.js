@@ -143,7 +143,6 @@ function DetailsProduct(props) {
     });
   }
 
-  
 
 
   function cambiarFoto(ruta) {
