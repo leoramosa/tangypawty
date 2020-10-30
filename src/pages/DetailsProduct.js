@@ -16,6 +16,11 @@ import InputLabel from '@material-ui/core/InputLabel';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
 import NativeSelect from '@material-ui/core/NativeSelect';
+
+import Radio from '@material-ui/core/Radio';
+import RadioGroup from '@material-ui/core/RadioGroup';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import FormLabel from '@material-ui/core/FormLabel';
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
@@ -57,20 +62,6 @@ function DetailsProduct(props) {
     setTalla(event.target.value);
   };
   
-  const [color, setColor] = useState('');
-
-  const handleChange2 = (event) => {
-    setColor(event.target.value);
-  };
-
-  const obtenerThumbs = (colors) => {
-    imagenes.forEach((item) => {
-      if (item.color === colors.target.value) {
-        setThumbs(item.imagenes);
-        setFotoActual(item.imagenes[0]);
-      }
-    });
-  }
 
 
   let { cart, setCart } = useContext(AppContext);
@@ -134,6 +125,30 @@ function DetailsProduct(props) {
       setImagenes(tmp);
     });
   }, [ruta, val_id]);
+
+  const [color, setColor] = useState('');
+
+  const handleChange2 = (event) => {
+    
+    imagenes.forEach((item) => {
+      if (item.color === setColor(event.target.value)) {
+        setThumbs(item.imagenes);
+        setFotoActual(item.imagenes[0]);
+      }
+    });
+  };
+
+  const obtenerThumbs = (colors) => {
+    console.log(colors)
+    imagenes.forEach((item) => {
+      if (item.color === colors.target.value) {
+        setThumbs(item.imagenes);
+        setFotoActual(item.imagenes[0]);
+      }
+    });
+    colors.persist();
+  }
+
 
   function cambiarFoto(ruta) {
     setFotoActual(ruta);
@@ -274,7 +289,6 @@ function DetailsProduct(props) {
                         id="demo-simple-select-outlined"
                         value={color}
                         onChange={handleChange2}
-                        onClick={obtenerThumbs}
                         label="Color"
                       >
                         {detalle.idcolor.map((item) => (
@@ -342,8 +356,6 @@ function DetailsProduct(props) {
                 <div className="select_content">
                   <label className="selectLabel" htmlFor="">Talla</label>
                   <select  
-                    value={color}
-                      onClick={handleChange2}
                       onChange={obtenerThumbs}
                       className="select_delivery"
                       id="">
@@ -357,6 +369,24 @@ function DetailsProduct(props) {
                           </option>
                         ))}
                   </select>
+                  <FormControl component="fieldset">
+      <FormLabel component="legend">Gender</FormLabel>
+      <RadioGroup aria-label="gender" name="gender1" value={color} onChange={handleChange2}>
+        
+        {detalle.idcolor.map((item) => (
+                          <FormControlLabel
+                            key={item.id}
+                            value={item.valuecolor}
+                            onClick={obtenerThumbs}
+                            control={<Radio />} label={item.valuecolor}
+                          >
+                            {item.valuecolor}
+                          </FormControlLabel>
+                        ))}
+
+        <FormControlLabel onClick={obtenerThumbs} value="disabled" disabled control={<Radio />} label="(Disabled option)" />
+      </RadioGroup>
+    </FormControl>
                 </div>
               </div>
               
