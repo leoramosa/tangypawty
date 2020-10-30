@@ -21,6 +21,7 @@ import Radio from '@material-ui/core/Radio';
 import RadioGroup from '@material-ui/core/RadioGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormLabel from '@material-ui/core/FormLabel';
+import { colors } from '@material-ui/core';
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
@@ -128,26 +129,21 @@ function DetailsProduct(props) {
 
   const [color, setColor] = useState('');
 
-  const handleChange2 = (event) => {
-    
-    imagenes.forEach((item) => {
-      if (item.color === setColor(event.target.value)) {
-        setThumbs(item.imagenes);
-        setFotoActual(item.imagenes[0]);
-      }
-    });
+  const handleChange2 = (e) => {
+    setColor(e.target.value)
   };
 
-  const obtenerThumbs = (colors) => {
+  function obtenerThumbs(e) {
     console.log(colors)
     imagenes.forEach((item) => {
-      if (item.color === colors.target.value) {
+      if (item.color === e.target.value) {
         setThumbs(item.imagenes);
         setFotoActual(item.imagenes[0]);
       }
     });
-    colors.persist();
   }
+
+  
 
 
   function cambiarFoto(ruta) {
@@ -356,7 +352,11 @@ function DetailsProduct(props) {
                 <div className="select_content">
                   <label className="selectLabel" htmlFor="">Talla</label>
                   <select  
-                      onChange={obtenerThumbs}
+                      
+                      onChange={(e) => {
+                        obtenerThumbs(e);
+                        handleChange2(e);
+                      }}
                       className="select_delivery"
                       id="">
                       <option value="" >Seleccione Talla</option>
