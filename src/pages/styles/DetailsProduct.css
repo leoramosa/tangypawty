@@ -374,7 +374,7 @@
     position: fixed;
     bottom: 0;
     left: 0;
-    z-index: 40;
+    z-index: 6;
     margin-top: 0;
     width: 100%;
   }
@@ -392,7 +392,7 @@
     background: #f9f9f9;
     -webkit-box-shadow: 0 4px 20px 0 #4b4a4a;
     box-shadow: 0 4px 20px 0 #4b4a4a;
-    z-index: 40;
+    z-index: 5;
     display: flex;
   }
   .select_content{

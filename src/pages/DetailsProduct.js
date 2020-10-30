@@ -36,6 +36,17 @@ const useStyles = makeStyles((theme) => ({
   },
   selectEmpty: {
     marginTop: theme.spacing(2),
+    fontSize:14,
+    paddingLeft:10,
+    [theme.breakpoints.down('sm')]: {
+      '&:before': {
+        borderBottom: "none",
+      },
+      '&:after': {
+        borderBottom: "none",
+      },
+    },
+    
   },
   buttonCard: {
     background:"#6c5ce7",
@@ -350,7 +361,7 @@ function DetailsProduct(props) {
                 </div>
                 <div className="separador"></div>
                 <div className="select_content">
-                  <label className="selectLabel" htmlFor="">Tall</label>
+                  <label className="selectLabel" htmlFor="">Talla</label>
                   <FormControl className={classes.formControl}>
                     <NativeSelect
                       className={classes.selectEmpty}
