@@ -16,8 +16,9 @@ import InputLabel from '@material-ui/core/InputLabel';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
 import NativeSelect from '@material-ui/core/NativeSelect';
+import  Selectconsulta  from '../components/Selectconsulta';
 
-import { colors } from '@material-ui/core';
+
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
@@ -55,11 +56,17 @@ const useStyles = makeStyles((theme) => ({
       borderRadius:"0px 0px 0px 0px",
     },
   },
+  selickdfs:{
+    maxHeight: "300px",
+    overflowY: "scroll",
+    color:"red,"
+  },
 }));
 
 
 
 function DetailsProduct(props) {
+
 
 
   const [cantidad, setCantidad] = useState(1);
@@ -73,8 +80,6 @@ function DetailsProduct(props) {
 
 
   let { cart, setCart } = useContext(AppContext);
-  
-
   
 
   let [detalle, setDetalle] = useState({
@@ -141,7 +146,7 @@ function DetailsProduct(props) {
   };
 
   function obtenerThumbs(e) {
-    console.log(colors)
+    
     imagenes.forEach((item) => {
       if (item.color === e.target.value) {
         setThumbs(item.imagenes);
@@ -386,13 +391,16 @@ function DetailsProduct(props) {
               </div>
               
 
+              <Selectconsulta />
+              
+
               <div className="btn_compra_quanty">
                 
                 <div className="btn-add">
                   <div className="buttonCantidad">
                     <button className="in-btn" onClick={() => setCantidad(cantidad - 1 || 1)} >-</button>
                         <div type="number" className="campInputbtn" onChange={updateCantidad.bind(this)} defaultValue="1" min="1" max="10">{cantidad}</div>
-                    <button className="des-btn" onClick={() => setCantidad(cantidad + 1)} >+</button>
+                    <button className="des-btn" onClick={() => setCantidad(cantidad + 1 || 10)} >+</button>
                   </div>
 
                   <Button

@@ -1,21 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 
-
-const city = [
-  {
-    id: 0,
-    name: "lima",
-    delivery: "si",
-    cost: 50
-  },
-  {
-    id: 1,
-    name: "piura",
-    delivery: "no",
-    cost: 50
-  }
-];
 
 const province = [
   {
@@ -72,9 +57,15 @@ const district = [
 ];
 
 function Producto() {
-  const [depart, setDepart] = useState(-1);
+  const [depart, setDepart] = useState([]);
   const [provin, setProvin] = useState(-1);
   const [dist, setDist] = useState(-1);
+
+  useEffect(()=> {
+    fetch('https://apirestshoop.herokuapp.com/servicios/city/')
+      .then(response => response.json())
+      .then(data => setDepart(data));
+   }, []);
 
   const handleDepartament = function (e) {
     const seldepart = e.target.value;
@@ -117,7 +108,7 @@ function Producto() {
           onChange={handleDepartament}
         >
           <option value={-1}>selecione ciudad</option>
-          {city.map((item) => (
+          {depart.map((item) => (
             <option key={"city" + item.id} value={item.id}>
               {item.name}
             </option>

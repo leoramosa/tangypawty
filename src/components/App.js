@@ -5,8 +5,7 @@ import DetailsProduct from '../pages/DetailsProduct';
 import HomeProducts from '../pages/HomeProducts';
 import HomeCategorias from '../pages/HomeCategorias';
 
-
-import select from '../components/copy2';
+import final from '../components/copy';
 import pago from '../components/PaymentForm';
 import NotFound from '../pages/NotFound';
 import { AppProvider } from '../context/AppContext';
@@ -23,7 +22,7 @@ function App() {
         <Layout>
           <Switch>
             <Route exact path="/" component={PetHome} />
-            <Route exact path="/select" component={select} />
+            <Route exact path="/final" component={final} />
             <Route path="/cart" component={Cart} />
             <Route exact path="/products/" component={HomeProducts} />
             <Route exact path="/productos/:id/" component={DetailsProduct} />

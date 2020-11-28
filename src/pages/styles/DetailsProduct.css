@@ -317,6 +317,47 @@
 
 /* style select delivery */
 
+/* style place */
+.place{
+  margin-top: 10px;
+  background-color: #f5f5f5;
+  padding: 15px;
+  border-radius: 5px;
+}
+
+.district{
+  padding-bottom: 13px;
+  border-bottom: .5px solid #dedede;
+  display: flex;
+  justify-content: space-between;
+  color: #6c5ce7;
+  font-weight: 500;
+}
+
+.district_change{
+  color: #bcbcbc;
+  font-size: 12px;
+}
+
+.despacho{
+  padding: 10px 0;
+  border-bottom: 2px solid white;
+}
+
+.despacho .despacho_normal{
+ font-weight: 800;
+}
+.despacho span{
+  font-size: 12px;
+}
+
+.retiro{
+  padding-top: 10px;
+}
+
+
+/* end style place */
+
 @media screen and (max-width: 1140px) {
   .detail_content{
     width: 100%;
@@ -366,6 +407,13 @@
     margin: 0 auto;
 }
 }
+
+@media screen and (min-width: 544px) {
+  .selectarea{
+    display: none;
+  }
+}
+
 @media screen and (max-width: 544px) {
   .colors__product {
     display: none;
