@@ -23,6 +23,23 @@
   width: 100%;
 }
 
+ .img-container{
+  object-fit: cover;
+  border: 2px solid #ccc;
+  width: 100%;
+  max-width: 100%;
+  height: 540px;
+  cursor: pointer;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.img-container:hover{
+  background-size: 150%;
+  border: 1px solid #ddd;
+  cursor: zoom-in;
+}
+
 .thumbnail {
   object-fit: cover;
   max-width: 180px;
