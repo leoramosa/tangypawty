@@ -1,91 +1,90 @@
 .imgbanner {
-  width: 100%;
+	width: 100%;
 }
-
-
 
 .bannerslider {
-  padding-bottom: 35px;
+	padding-bottom: 35px;
 }
 .img-baner-pro {
-  border: 2px solid #683ab79f;
-  padding-bottom: 20px;
+	border: 2px solid #683ab79f;
+	padding-bottom: 20px;
 }
 
 .title-bpro {
-  text-align: center;
+	text-align: center;
 }
 
 .title-big-bpro {
-  padding-top: 5px;
-  padding-bottom: 10px;
-  font-weight: 600;
-  font-size: 20px;
-  color: #868686;
+	padding-top: 5px;
+	padding-bottom: 10px;
+	font-weight: 600;
+	font-size: 20px;
+	color: #868686;
 }
 
 .btn-bpro {
-  border: 2px solid #673ab7;
-  display: inline-block;
-  padding: 8px;
-  color: #673ab7;
-  font-weight: 600;
-  font-size: 17px;
+	border: 2px solid #673ab7;
+	display: inline-block;
+	padding: 8px;
+	color: #673ab7;
+	font-weight: 600;
+	font-size: 17px;
 }
 
 .product_destacado {
-  padding: 5px;
-  border: 2px solid #c5c5c5;
-  border-radius: 4px;
+	padding: 5px;
+	border: 2px solid #c5c5c5;
+	border-radius: 4px;
 }
 .product_destacado-skeleton {
-  padding: 5px;
+	padding: 5px;
 
-  border-radius: 4px;
-  width: 25%;
-  margin: 0 5px;
+	border-radius: 4px;
+	width: 25%;
+	margin: 0 5px;
 }
 .skeleton-conten {
-  padding: 5px;
+	padding: 5px;
 
-  border-radius: 4px;
-  display: flex;
+	border-radius: 4px;
+	display: flex;
 }
 
 .colors {
-  position: absolute;
+	position: absolute;
 }
 
 .color_prod {
-  width: 15px;
-  height: 15px;
-  border-radius: 3px;
-
-  margin: 4px;
+	width: 15px;
+	height: 15px;
+	border-radius: 3px;
+	border: 1px solid #d8d8d8;
+	margin: 4px;
 }
 
 .list-tallas {
-  border: 1px solid #a7a7a7;
-  border-radius: 1px;
-  padding: 3px;
-  margin: 2px;
-  margin-right: 5px;
-  text-align: center;
-  color: #a7a7a7;
-  font-size: 13px;
+	border: 1px solid #a7a7a7;
+	border-radius: 1px;
+	padding: 3px;
+	margin: 2px;
+	margin-right: 10px;
+	text-align: center;
+	color: #212121;
+	font-size: 13px;
+	background-color: #ffffffed;
 }
 
 .tallas-prod {
-  position: absolute;
-  right: 0;
-  padding: 2px;
+	position: absolute;
+	right: 0;
+	padding: 2px;
 }
 
 .title-talla {
-  font-size: 11px;
+	font-size: 11px;
 }
 
 .swiper__content {
-  padding-bottom: 34px;
-  padding-top: 15px;
+	padding-bottom: 34px;
+	padding-top: 15px;
 }

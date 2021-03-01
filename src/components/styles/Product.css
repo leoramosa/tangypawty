@@ -1,47 +1,64 @@
 .card-product {
-  margin: 6px;
-  border: 1px solid #909090;
-  border-radius: 4px;
+	margin: 6px;
+	border: 1px solid #909090;
+	border-radius: 4px;
 }
 .product-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
 }
 .image-product {
-  border-radius: 10px 10px 0px 0px;
-  max-width: 100%;
+	border-radius: 10px 10px 0px 0px;
+	max-width: 100%;
 }
 
 .product-btn {
-  padding: 4px;
+	padding: 4px;
 }
 
 .hola {
-  margin: 4px;
+	margin: 4px;
 }
 
 .info-price {
-  display: flex;
-  justify-content: space-between;
-  padding: 0px 13px 0px 8px;
-  font-size: 15px;
-  padding-bottom: 6px;
+	display: flex;
+	justify-content: space-between;
+	padding: 0px 13px 0px 8px;
+	font-size: 15px;
+	padding-bottom: 6px;
 }
 
 .prince-product {
-  color: #673ab7;
-  font-weight: 800;
+	color: #673ab7;
+	font-weight: 800;
 }
 .btn__comprar {
-  background: #673ab7de;
+	background: #673ab7de;
 }
 
 .color-talla {
-  display: flex;
-  justify-content: space-between;
-  padding-bottom: 7px;
+	display: flex;
+	justify-content: space-between;
+	padding-bottom: 7px;
 }
 
 .colores-product {
-  display: flex;
+	display: flex;
+}
+
+.list-tallas-product {
+	border: 1px solid #a7a7a7;
+	text-align: center;
+	color: #212121;
+	font-size: 13px;
+	background-color: #ffffffed;
+	width: 20px;
+	margin: 0 3px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.coverback {
+	background: #6c5ce7;
 }

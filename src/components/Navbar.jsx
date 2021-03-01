@@ -65,7 +65,7 @@ const Navbar = () => {
                 exact
                 to="/"
                 className="nav-links"
-                activeClassName="activeLink"
+                activeClassName="activeLinkG"
                 onClick={() => setClicked((clicked) => !clicked)}
               >
                 Inicio
@@ -77,7 +77,7 @@ const Navbar = () => {
                 to="/productos"
                 onClick={() => setClicked((clicked) => !clicked)}
                 className="nav-links"
-                activeClassName="activeLink"
+                activeClassName="activeLinkG"
               >
                 Productos
               </NavLink>

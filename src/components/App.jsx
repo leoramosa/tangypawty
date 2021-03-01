@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import PetHome from '../pages/PetHome';
 
-import Pruebadetalle from '../pages/Pruebadetalle';
+import DetailsProduct from '../pages/DetailsProduct';
 import HomeProducts from '../pages/HomeProducts';
 import HomeCategorias from '../pages/HomeCategorias';
 import pago from './PaymentForm';
@@ -40,7 +40,7 @@ function App() {
 
             <Route exact path="/productos/:id/" >
               <Layout>
-                <Pruebadetalle/>
+                <DetailsProduct/>
               </Layout>
             </Route>
 

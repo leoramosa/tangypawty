@@ -116,13 +116,13 @@ const Product = ( props ) =>{
                       <div
                         key={colores.id}
                         className="color_prod"
-                        style={{ backgroundColor: colores.numcolor }}
+                        style={{ backgroundColor: colores.numbercolor }}
                       ></div>
                     ))}
                   </div>
                   <div className="colores-product">
                     {dato.idtallaproducto.map((tallas) => (
-                      <div key={tallas.id} className="list-tallas">
+                      <div key={tallas.id} className="list-tallas-product">
                         {tallas.nomtalla}
                       </div>
                     ))}

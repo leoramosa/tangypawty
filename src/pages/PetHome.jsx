@@ -22,7 +22,8 @@ SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
 SwiperCore.use([Autoplay]);
 
 const PetHome = () => {
-  const {products, } = useContext(AppContext);
+  const { cover } = useContext(AppContext);
+
 
   return (
     <React.Fragment>
@@ -39,14 +40,17 @@ const PetHome = () => {
             onSwiper={(swiper) => console.log(swiper)}
             onSlideChange={() => console.log('slide change')}
           >
-            {products.map((prod, i) => (
-              <SwiperSlide key={(prod.id, i)}>
+            {cover.map((prod, i) => (
+              <SwiperSlide key={(prod.id, i)} className={`coverback portada${prod.estadoportada}`}>
                 <div className="">
                   <div className="title-banner">
                     <p className="title-big-banner">{prod.nombre}</p>
-                    <p className="banner-description">
-                      {prod.brevedescripcion}
-                    </p>
+
+                      {prod.portadaproducto.map((itemp,i)=>(
+                      <p key={(itemp.id, i)} className="banner-description">
+                        {itemp.brevedescripcion}
+                      </p>
+                      ))}
                     <div className="">
                       <Link className="linkapp" to={`/productos/${prod.id}`}>
                         <div className="btn-adqui">COMPRAR AHORA</div>

@@ -1,13 +1,15 @@
 import  { useState, useEffect } from 'react';
 /* import initialState from '../initialState' */
-const API = 'https://apirestshoop.herokuapp.com/servicios/productos/';
-const API2 = 'https://apirestshoop.herokuapp.com/servicios/categorias/';
+const API = 'http://127.0.0.1:8000/servicios/productos/';
+const API2 = 'http://127.0.0.1:8000/servicios/categorias/';
+const API3 = 'http://127.0.0.1:8000/servicios/portadas/';
 
 const useInitialState = ()=> {
  /*  const { state, setState } = useState(initialState); */
   const [ cart, setCart ] = useState([]);
   const [products, setProducts] = useState([]);
   const [category, setCategory] = useState([]);
+  const [cover, setCover] = useState([]);
 
   useEffect( () => {
    const dataCart= JSON.parse(localStorage.getItem('dataCart'))
@@ -21,6 +23,7 @@ const useInitialState = ()=> {
   useEffect( () => {
     getProduct()
     getCategory()
+    getCover()
   }, []);
 
   const getProduct = async () => {
@@ -35,9 +38,11 @@ const useInitialState = ()=> {
     setCategory(category)
   }
 
-
-
-
+  const getCover = async () => {
+    const data = await fetch(API3)
+    const covers = await data.json()
+    setCover(covers)
+  }
 
 
   return {
@@ -46,6 +51,8 @@ const useInitialState = ()=> {
     category,
     products,
     setProducts,
+    cover,
+    setCover
   };
 
 };

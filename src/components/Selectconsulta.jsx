@@ -73,9 +73,9 @@ const MenuProps = {
   },
 };
 
-const apiCity ='https://apirestshoop.herokuapp.com/servicios/city/'
-const apiProvince ='https://apirestshoop.herokuapp.com/servicios/province/'
-const apiDistrict ='https://apirestshoop.herokuapp.com/servicios/district/'
+const apiCity ='http://127.0.0.1:8000/servicios/city/'
+const apiProvince ='http://127.0.0.1:8000/servicios/province/'
+const apiDistrict ='http://127.0.0.1:8000/servicios/district/'
 
 const Selectconsulta = () => {
 

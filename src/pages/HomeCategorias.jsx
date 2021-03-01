@@ -28,7 +28,7 @@ const HomeProducts = () => {
   const [productCategory, setProductCategory] = useState([]);
   const classes = useStyles();
   const { id } = useParams();
-  let API = 'http://apirestshoop.herokuapp.com/servicios/categorias_name/';
+  let API = 'http://127.0.0.1:8000/servicios/categorias_name/';
   useEffect(() => {
     axios.get(API + id ).then((res) => {
       let datos = res.data;

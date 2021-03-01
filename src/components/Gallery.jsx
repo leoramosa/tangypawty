@@ -59,7 +59,7 @@ const Gallery = () =>{
         {products.length > 0 ? (
           <React.Fragment>
             {products.map((photo) => (
-              <SwiperSlide key={photo.id}>
+              <SwiperSlide key={photo.id} className={"portada"+photo.id} >
                 <Link className="linkapp" to={'/productos/' + photo.id}>
                   <div className="product_destacado">
                     <div className="colors">
@@ -73,7 +73,7 @@ const Gallery = () =>{
                     </div>
 
                     <div className="tallas-prod">
-                      <div className="title-talla">Tallas</div>
+                      
                       {photo.idtallaproducto.map((tallas) => (
                         <div key={tallas.id} className="list-tallas">
                           {tallas.nomtalla}
