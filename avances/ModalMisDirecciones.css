@@ -1,0 +1,128 @@
+.ModalDirecciones {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 5;
+  transition: 2s;
+}
+
+.ModalDirecciones .element__icon {
+  background-color: #54b268;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  margin: 8px auto;
+}
+
+.ModalDirecciones__container {
+  position: relative;
+  top: 10rem;
+  background-color: #ffffff;
+  padding: 40px;
+  width: 830px;
+  border-radius: 6px;
+  border: 1px solid #a5a5a5;
+  transition-property: opacity, left, top, height;
+  transition-duration: 3s, 5s, 3s, 5s;
+  transition-delay: 10s;
+}
+
+.ModalDirecciones__close-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  border: 0;
+  background-color: #f5f5f5;
+  padding: 0.5rem 1rem;
+}
+
+.ModalDirecciones .element__title {
+  font-size: 20px;
+  margin-bottom: 25px;
+  padding: 0 0 15px;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  color: #4b4b4b;
+  border-bottom: solid 1px #e4e4e4;
+}
+
+.ModalDirecciones .element__body {
+  text-align: left;
+  cursor: pointer;
+  font-size: 16px;
+  margin-bottom: 25px;
+  height: auto;
+}
+
+.ModalDirecciones .element__body p{
+  color: #757575;
+}
+
+.ModalDirecciones .element__body strong{
+  color: #79568e;
+  font-weight: 400;
+}
+
+.ModalDirecciones .element__modificar,
+.ModalDirecciones .element__nueva__direccion {
+  text-align: right;
+}
+
+.ModalDirecciones .element__modificar button,
+.ModalDirecciones .element__nueva__direccion button,
+.ModalDirecciones .element__aplicar__guardar button{
+    margin-bottom: 20px;
+    width: auto;
+    padding: 5px 20px;
+    color: #673ab7;
+    font-weight: 400;
+    background: transparent;
+    height: 40px;
+    border: solid 1px #673ab7;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 12px;
+    margin: 0 10px 0 0;
+}
+
+.ModalDirecciones .element__modificar button:hover,
+.ModalDirecciones .element__nueva__direccion button:hover,
+.ModalDirecciones .element__aplicar__guardar button:hover{
+    color: #ffffff;
+    background: #673ab7;
+}
+
+.ModalDirecciones .element__footer{
+  padding: 15px 0 0;
+}
+
+.ModalDireccionNueva__container-element .form-group.solo{
+  height: 55px;
+  background: #ffffff;
+}
+
+.ModalDireccionNueva__container-element .crear-direccion-form .form-group{
+  background-color: #ffffff;
+}
+
+.ModalDireccionNueva__container-element .crear-direccion-form .form-group input{
+  background: rgb(255, 255, 255) !important;
+}
+
+
+.ModalDireccionNueva__container-element .crear-direccion-form form{
+  padding: 0;
+}

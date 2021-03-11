@@ -1,0 +1,58 @@
+.metodo-pago{
+    width: 1200px;
+    margin: 0 74.50px 0 74.50px;
+    height: 569px;
+}
+
+.metodo-pago .resumen-productos .info-productos{
+    background: #ffffff;
+    height: fit-content;
+}
+
+.formas-de-pago{
+    margin: 30px 0 30px 0;
+    background: #f9f9f9;
+    padding: 25px;
+    height: 525px;
+}
+
+.formas-de-pago h3{
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.formas-de-pago .medio_pago.tarjeta_credito,
+.formas-de-pago .medio_pago.codigo_qr{
+    padding: 15px;
+    border-bottom: 1px solid #dddddd;
+}
+
+.formas-de-pago .wrapping_metodos_pago label{
+    line-height: 15pt;
+    padding: 3px;
+    color: #757575;
+    cursor: pointer;
+}
+
+.formas-de-pago .wrapping_comprobante_pago{
+    padding-top: 25px;
+}
+
+.formas-de-pago .wrapping_comprobante_pago h3{
+    font-size: 20px;
+    margin-bottom: 25px;
+    color: #4b4b4b;
+    text-align: left;
+}
+
+.formas-de-pago  .wrapping_comprobante_pago label{
+    color: #333333;
+    cursor: pointer;
+}
+
+.formas-de-pago  .wrapping_comprobante_pago .comprobante_correo{
+    font-size: 14px;
+    color: #757575;
+    padding-top: 25px;
+}
